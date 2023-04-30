@@ -4,10 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import useTranslation from '@/common/customHooks/translations';
 import { useLanguageContext } from '@/common/contexts/LanguageContext';
 
+
 function LandingPage() {
-  let navigate = useNavigate();
-  const t = useTranslation();
-  const { language, changeLanguage } = useLanguageContext();
+  let navigate = useNavigate()
+  const t = useTranslation()
+  const { language, changeLanguage } = useLanguageContext()
   return (
     <div>
       <div>
@@ -29,9 +30,12 @@ function LandingPage() {
       </button>
       &nbsp;
       <input type='checkbox' className='accent-pink-500' checked />
-      <button onClick={() => navigate('/auth/signin')}> {t.welcome}</button>
+      <button onClick={() => toast.success('/auth/signin')}>
+        {' '}
+        {t.welcome} <i class='fas fa-home'></i>s
+      </button>
     </div>
-  );
+  )
 }
 
 export default LandingPage;
